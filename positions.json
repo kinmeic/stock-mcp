@@ -1,0 +1,12 @@
+[
+  {
+    "code": "000858",
+    "name": "五粮液",
+    "quantity": 100,
+    "costPrice": 105.5,
+    "currency": "CNY",
+    "market": "sz",
+    "createdAt": "2026-02-23T07:55:35.835Z",
+    "updatedAt": "2026-02-23T07:55:35.835Z"
+  }
+]

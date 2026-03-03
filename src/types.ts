@@ -33,6 +33,7 @@ export interface AStockData {
   floatingShares: number;  // 72 流通股
   totalShares: number;     // 73 总股本
   currency: string;       // 82 货币
+  lotSize: number;        // 每手股数，A股固定100
   bidAsk?: {
     asks: Array<{ price: number; volume: number }>;
     bids: Array<{ price: number; volume: number }>;
@@ -58,6 +59,7 @@ export interface HKStockData {
   floatingShares: number;
   totalShares: number;
   currency: string;
+  lotSize: number;  // 每手股数，取字段第61位
 }
 
 // 美股解析后的数据
@@ -72,6 +74,7 @@ export interface USStockData {
   amount: number;
   marketCap?: number;
   currency: string;
+  lotSize: number;  // 每手股数，美股固定1
 }
 
 // 统一返回类型

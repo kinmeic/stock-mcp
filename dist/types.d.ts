@@ -28,6 +28,7 @@ export interface AStockData {
     floatingShares: number;
     totalShares: number;
     currency: string;
+    lotSize: number;
     bidAsk?: {
         asks: Array<{
             price: number;
@@ -57,6 +58,7 @@ export interface HKStockData {
     floatingShares: number;
     totalShares: number;
     currency: string;
+    lotSize: number;
 }
 export interface USStockData {
     market: 'us';
@@ -69,6 +71,7 @@ export interface USStockData {
     amount: number;
     marketCap?: number;
     currency: string;
+    lotSize: number;
 }
 export type StockData = AStockData | HKStockData | USStockData;
 export interface Position {

@@ -103,6 +103,7 @@ function parseAStock(fields: string[], market: 'sh' | 'sz'): AStockData {
     floatingShares: parseNum(72),
     totalShares: parseNum(73),
     currency: getField(82) || 'CNY',
+    lotSize: getField(2).startsWith('688') ? 200 : 100,  // 科创板(688开头)每手200股，其他A股每手100股
   };
 
   // 解析10档买卖盘
@@ -160,6 +161,7 @@ function parseHKStock(fields: string[]): HKStockData {
     floatingShares: parseNum(69),
     totalShares: parseNum(70),
     currency: getField(75) || 'HKD',
+    lotSize: parseNum(60),  // 每手股数，取字段第61位（数组索引60）
   };
 }
 
@@ -182,6 +184,7 @@ function parseUSStock(fields: string[]): USStockData {
     amount: parseNum(7),
     marketCap: parseNum(8),
     currency: 'USD',
+    lotSize: 1,  // 美股每手固定1股
   };
 }
 
